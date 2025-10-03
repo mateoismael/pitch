@@ -732,7 +732,7 @@ function Slide8() {
               textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5)',
               animation: 'glitch 3s infinite'
             }}>
-          Phia anota.
+          Phia procesa.
         </h1>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-green-400 text-center"
             style={{
