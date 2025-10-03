@@ -538,15 +538,19 @@ function Slide5() {
         φ
       </div>
 
-      {/* Phia text - Larger and centered */}
-      <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[180px] font-bold text-green-400 text-center"
-          style={{
-            fontFamily: 'Georgia, serif',
-            textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5), 0 0 90px rgba(0, 255, 0, 0.3)',
-            animation: 'glitch 3s infinite'
-          }}>
+      {/* Phia text - Larger and centered - Clickable */}
+      <a
+        href="https://phia-phi.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[180px] font-bold text-green-400 text-center cursor-pointer hover:scale-105 transition-transform duration-300"
+        style={{
+          fontFamily: 'Georgia, serif',
+          textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5), 0 0 90px rgba(0, 255, 0, 0.3)',
+          animation: 'glitch 3s infinite'
+        }}>
         Phia
-      </h2>
+      </a>
 
       {/* Subtitle */}
       <p className="text-sm sm:text-base md:text-lg lg:text-xl text-green-300 text-center mt-2 sm:mt-3"
@@ -875,15 +879,19 @@ function Slide10() {
         φ
       </div>
 
-      {/* Phia text - Larger and centered */}
-      <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[180px] font-bold text-green-400 text-center"
-          style={{
-            fontFamily: 'Georgia, serif',
-            textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5), 0 0 90px rgba(0, 255, 0, 0.3)',
-            animation: 'glitch 3s infinite'
-          }}>
+      {/* Phia text - Larger and centered - Clickable */}
+      <a
+        href="https://phia-phi.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[180px] font-bold text-green-400 text-center cursor-pointer hover:scale-105 transition-transform duration-300"
+        style={{
+          fontFamily: 'Georgia, serif',
+          textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5), 0 0 90px rgba(0, 255, 0, 0.3)',
+          animation: 'glitch 3s infinite'
+        }}>
         Phia
-      </h2>
+      </a>
 
       {/* Subtitle */}
       <p className="text-sm sm:text-base md:text-lg lg:text-xl text-green-300 text-center mt-2 sm:mt-3"
