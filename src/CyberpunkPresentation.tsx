@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export default function CyberpunkPresentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 9;
+  const totalSlides = 10;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => {
@@ -24,9 +24,9 @@ export default function CyberpunkPresentation() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
-        setCurrentSlide((prev) => (prev - 1 + 9) % 9);
+        setCurrentSlide((prev) => (prev - 1 + 10) % 10);
       } else if (e.key === 'ArrowRight') {
-        setCurrentSlide((prev) => (prev + 1) % 9);
+        setCurrentSlide((prev) => (prev + 1) % 10);
       }
     };
 
@@ -63,9 +63,10 @@ export default function CyberpunkPresentation() {
         {currentSlide === 3 && <Slide4 />}
         {currentSlide === 4 && <Slide5 />}
         {currentSlide === 5 && <Slide6 />}
-        {currentSlide === 6 && <Slide7 />}
-        {currentSlide === 7 && <Slide8 />}
-        {currentSlide === 8 && <Slide9 />}
+        {currentSlide === 6 && <Slide9 />}
+        {currentSlide === 7 && <Slide7 />}
+        {currentSlide === 8 && <Slide8 />}
+        {currentSlide === 9 && <Slide10 />}
       </div>
 
       {/* Navigation Controls */}
@@ -676,6 +677,152 @@ function Slide6() {
 
 function Slide7() {
   return (
+    <div className="relative w-full h-full flex flex-col items-center justify-center px-4 gap-8 sm:gap-12">
+      {/* Main text */}
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-green-400 text-center"
+          style={{
+            textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5)',
+            animation: 'glitch 3s infinite'
+          }}>
+        ¿Qué sigue?
+      </h1>
+
+      {/* Icon 1 - Image (top left) */}
+      <div className="absolute top-16 left-16 sm:top-20 sm:left-24 md:top-24 md:left-32 lg:top-28 lg:left-40">
+        <svg viewBox="0 0 120 120" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
+             style={{ animation: 'float 3s ease-in-out infinite' }}>
+          {/* Image frame */}
+          <rect x="15" y="20" width="90" height="70" fill="none" stroke="#00ff00" strokeWidth="3"
+                rx="4" style={{ filter: 'drop-shadow(0 0 10px rgba(0, 255, 0, 0.7))' }} />
+
+          {/* Mountain/landscape */}
+          <path d="M 25 75 L 45 50 L 65 60 L 85 40 L 95 50 L 95 80 L 25 80 Z"
+                fill="none" stroke="#00ff00" strokeWidth="2.5" opacity="0.8" />
+
+          {/* Sun/circle */}
+          <circle cx="80" cy="35" r="8" fill="none" stroke="#00ff00" strokeWidth="2.5" opacity="0.8" />
+        </svg>
+      </div>
+
+      {/* Icon 2 - Credit Card (top right) */}
+      <div className="absolute top-16 right-16 sm:top-20 sm:right-24 md:top-24 md:right-32 lg:top-28 lg:right-40">
+        <svg viewBox="0 0 140 100" className="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-20 lg:w-32 lg:h-24"
+             style={{ animation: 'float 3.5s ease-in-out infinite', animationDelay: '0.5s' }}>
+          {/* Card outline */}
+          <rect x="10" y="20" width="120" height="70" fill="none" stroke="#00ff00" strokeWidth="3"
+                rx="8" style={{ filter: 'drop-shadow(0 0 10px rgba(0, 255, 0, 0.7))' }} />
+
+          {/* Magnetic stripe */}
+          <rect x="10" y="35" width="120" height="15" fill="#00ff00" opacity="0.3" />
+
+          {/* Chip */}
+          <rect x="25" y="55" width="20" height="16" fill="none" stroke="#00ff00" strokeWidth="2" rx="2" />
+          <line x1="28" y1="58" x2="28" y2="68" stroke="#00ff00" strokeWidth="1" opacity="0.6" />
+          <line x1="32" y1="58" x2="32" y2="68" stroke="#00ff00" strokeWidth="1" opacity="0.6" />
+          <line x1="36" y1="58" x2="36" y2="68" stroke="#00ff00" strokeWidth="1" opacity="0.6" />
+          <line x1="40" y1="58" x2="40" y2="68" stroke="#00ff00" strokeWidth="1" opacity="0.6" />
+
+          {/* Card numbers */}
+          <line x1="55" y1="62" x2="115" y2="62" stroke="#00ff00" strokeWidth="2" opacity="0.6" />
+          <line x1="55" y1="70" x2="95" y2="70" stroke="#00ff00" strokeWidth="2" opacity="0.6" />
+        </svg>
+      </div>
+
+      {/* Icon 3 - Database (bottom left) */}
+      <div className="absolute bottom-36 left-16 sm:bottom-40 sm:left-24 md:bottom-44 md:left-32 lg:bottom-48 lg:left-40">
+        <svg viewBox="0 0 120 140" className="w-16 h-20 sm:w-20 sm:h-24 md:w-24 md:h-28 lg:w-28 lg:h-32"
+             style={{ animation: 'float 4s ease-in-out infinite', animationDelay: '1s' }}>
+          {/* Top cylinder */}
+          <ellipse cx="60" cy="30" rx="40" ry="12" fill="none" stroke="#00ff00" strokeWidth="3"
+                   style={{ filter: 'drop-shadow(0 0 10px rgba(0, 255, 0, 0.7))' }} />
+
+          {/* Middle cylinder */}
+          <ellipse cx="60" cy="60" rx="40" ry="12" fill="none" stroke="#00ff00" strokeWidth="3"
+                   style={{ filter: 'drop-shadow(0 0 10px rgba(0, 255, 0, 0.7))' }} />
+
+          {/* Bottom cylinder */}
+          <ellipse cx="60" cy="90" rx="40" ry="12" fill="none" stroke="#00ff00" strokeWidth="3"
+                   style={{ filter: 'drop-shadow(0 0 10px rgba(0, 255, 0, 0.7))' }} />
+
+          {/* Connecting lines */}
+          <line x1="20" y1="30" x2="20" y2="90" stroke="#00ff00" strokeWidth="3" />
+          <line x1="100" y1="30" x2="100" y2="90" stroke="#00ff00" strokeWidth="3" />
+
+          {/* Bottom cap */}
+          <path d="M 20 90 Q 60 105 100 90" fill="none" stroke="#00ff00" strokeWidth="3" />
+        </svg>
+      </div>
+
+      {/* Icon 4 - Pencil-Eraser-Paper (bottom right) */}
+      <div className="absolute bottom-36 right-16 sm:bottom-40 sm:right-24 md:bottom-44 md:right-32 lg:bottom-48 lg:right-40">
+        <svg viewBox="0 0 100 120" className="w-16 h-20 sm:w-20 sm:h-24 md:w-24 md:h-28 lg:w-28 lg:h-32"
+             style={{ animation: 'float 3.2s ease-in-out infinite', animationDelay: '1.5s' }}>
+          {/* Paper */}
+          <rect x="10" y="30" width="70" height="85" fill="none" stroke="#00ff00" strokeWidth="2.5"
+                rx="3" style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.6))' }} />
+
+          {/* Lines on paper */}
+          <line x1="20" y1="45" x2="70" y2="45" stroke="#00ff00" strokeWidth="1.5" opacity="0.6" />
+          <line x1="20" y1="55" x2="70" y2="55" stroke="#00ff00" strokeWidth="1.5" opacity="0.6" />
+          <line x1="20" y1="65" x2="70" y2="65" stroke="#00ff00" strokeWidth="1.5" opacity="0.6" />
+          <line x1="20" y1="75" x2="55" y2="75" stroke="#00ff00" strokeWidth="1.5" opacity="0.6" />
+
+          {/* Pencil */}
+          <g transform="rotate(-35 75 25)">
+            {/* Pencil body */}
+            <rect x="60" y="5" width="35" height="8" fill="none" stroke="#00ff00" strokeWidth="2.5"
+                  style={{ filter: 'drop-shadow(0 0 8px rgba(0, 255, 0, 0.7))' }} />
+
+            {/* Pencil tip */}
+            <polygon points="95,9 103,9 99,13" fill="none" stroke="#00ff00" strokeWidth="2.5" />
+
+            {/* Eraser */}
+            <rect x="57" y="5" width="3" height="8" fill="#00ff00" opacity="0.4" stroke="#00ff00" strokeWidth="2" />
+
+            {/* Pencil details */}
+            <line x1="68" y1="5" x2="68" y2="13" stroke="#00ff00" strokeWidth="1" opacity="0.5" />
+            <line x1="78" y1="5" x2="78" y2="13" stroke="#00ff00" strokeWidth="1" opacity="0.5" />
+            <line x1="88" y1="5" x2="88" y2="13" stroke="#00ff00" strokeWidth="1" opacity="0.5" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+function Slide8() {
+  return (
+    <div className="relative w-full h-full flex flex-col items-center justify-center px-4 gap-8 sm:gap-12">
+      {/* Main text */}
+      <div className="flex flex-col items-center gap-3 sm:gap-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-green-400 text-center"
+            style={{
+              textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5)',
+              animation: 'glitch 3s infinite'
+            }}>
+          Phia escucha.
+        </h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-green-400 text-center"
+            style={{
+              textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5)',
+              animation: 'glitch 3s infinite'
+            }}>
+          Phia procesa.
+        </h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-green-400 text-center"
+            style={{
+              textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5)',
+              animation: 'glitch 3s infinite'
+            }}>
+          Tú progresas.
+        </h1>
+      </div>
+    </div>
+  );
+}
+
+function Slide9() {
+  return (
     <div className="relative w-full h-full flex items-center justify-center px-4 py-8 sm:py-12">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 max-w-7xl w-full">
         {/* Screenshot 1 - Left */}
@@ -715,44 +862,7 @@ function Slide7() {
   );
 }
 
-function Slide8() {
-  return (
-    <div className="relative w-full h-full flex flex-col items-center justify-center px-4 gap-8 sm:gap-12">
-      {/* Main text */}
-      <div className="flex flex-col items-center gap-3 sm:gap-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-green-400 text-center"
-            style={{
-              textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5)',
-              animation: 'glitch 3s infinite'
-            }}>
-          Phia escucha.
-        </h1>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-green-400 text-center"
-            style={{
-              textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5)',
-              animation: 'glitch 3s infinite'
-            }}>
-          Phia procesa.
-        </h1>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-green-400 text-center"
-            style={{
-              textShadow: '0 0 30px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.5)',
-              animation: 'glitch 3s infinite'
-            }}>
-          Tú entiendes.
-        </h1>
-      </div>
-
-      {/* Subtext */}
-      <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-green-300 text-center"
-         style={{ textShadow: '0 0 15px rgba(0, 255, 0, 0.5)' }}>
-        ¿Qué sigue?
-      </p>
-    </div>
-  );
-}
-
-function Slide9() {
+function Slide10() {
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-4 gap-2 sm:gap-3 md:gap-4 pb-22 sm:pb-24">
       {/* Phi Symbol (Georgia) - Smaller */}
